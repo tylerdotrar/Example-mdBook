@@ -164,21 +164,16 @@
 <ul>
 <li><strong>Note:</strong> attachments should be URL encoded.</li>
 </ul>
-<h1 id="requirements"><a class="header" href="#requirements">Requirements:</a></h1>
-<ol>
-<li>
-<p>Create a repository that is set to <code>Public</code></p>
-</li>
-<li>
-<p>Markdown files (aka site contents) should be inside of the <code>src</code> directory.</p>
-</li>
-<li>
-<p><code>src</code> directory also needs to include a root <code>SUMMARY.md</code> file.</p>
+<h3 id="creating-your-site"><a class="header" href="#creating-your-site">Creating your Site:</a></h3>
+<hr />
+<h5 id="1-create-a-repository-that-is-set-to-public"><a class="header" href="#1-create-a-repository-that-is-set-to-public">1. Create a repository that is set to <code>Public</code></a></h5>
+<h5 id="2-create-a-src-directory"><a class="header" href="#2-create-a-src-directory">2. Create a <code>src</code> directory.</a></h5>
+<h5 id="3-place-all-markdown-files-aka-the-site-contents-into-the-src-directory"><a class="header" href="#3-place-all-markdown-files-aka-the-site-contents-into-the-src-directory">3. Place all Markdown files (aka the site contents) into the <code>src</code> directory.</a></h5>
 <ul>
-<li>The <code>SUMMARY.md</code> file format can be found <a href="https://rust-lang.github.io/mdBook/format/summary.html">here</a>.</li>
+<li>The root <code>.md</code> file should be <code>SUMMARY.md</code>.</li>
+<li>Formatting documentation can be found <a href="https://rust-lang.github.io/mdBook/format/summary.html">here</a>.</li>
+<li>Example <code>SUMMARY.md</code>:</li>
 </ul>
-</li>
-</ol>
 <pre><code class="language-markdown"># Example mdBook
 
 - [Table of Contents](./SUMMARY.md)
@@ -189,9 +184,12 @@
 - [Tertiary Directory](Tertiary%20Directory/README.md)
   - [Export-Obsidian.ps1](Tertiary%20Directory/Export-Obsidian.md)
 </code></pre>
-<ol start="4">
-<li>Include a simple <code>book.toml</code></li>
-</ol>
+<h5 id="4-include-a-simple-booktoml"><a class="header" href="#4-include-a-simple-booktoml">4. Include a simple <code>book.toml</code></a></h5>
+<ul>
+<li>Your custom domain name should be included.</li>
+<li>If no domain name is specified, Github Pages will opt for: <code>https://&lt;username&gt;.github.io/&lt;repository&gt;</code></li>
+<li>Example <code>book.toml</code>:</li>
+</ul>
 <pre><code class="language-toml">[book]
 authors = [&quot;Tyler McCann (@tylerdotrar)&quot;]
 language = &quot;en&quot;
@@ -205,21 +203,67 @@ build-dir = &quot;public&quot;
 [output.html]
 cname=&quot;example.hotbox.zip&quot;
 </code></pre>
-<ol start="5">
-<li>
-<p>Enable Page support in <code>Repository --&gt; Settings --&gt; Pages --&gt; Branch</code></p>
+<h5 id="5-enable-read--write-permissions-for-workflows-using-the-github_token"><a class="header" href="#5-enable-read--write-permissions-for-workflows-using-the-github_token">5. Enable 'Read &amp; Write Permissions' for Workflows using the GITHUB_TOKEN.</a></h5>
 <ul>
-<li>The folder <code>/(root)</code> works for me.</li>
-<li>The folder <code>/docs</code> yells at me for not having any <code>.css</code> files.</li>
+<li><code>Repository --&gt; Settings --&gt; Actions --&gt; General --&gt; Workflow Permissions</code></li>
 </ul>
-</li>
-<li>
-<p>Create mdBook workflow via <code>Repository --&gt; Actions --&gt; Pages --&gt; View All --&gt; mdBook --&gt; Configure</code></p>
-</li>
-<li>
-<p>Default deployment should work, or might need a custom one.</p>
-</li>
-</ol>
+<p><img src="Primary%20Directory/../attachments/Setting_Workflow_Perms.png" alt="Allow GITHUB_TOKEN" /></p>
+<h5 id="6-create-mdbook-workflow-mdbookyml"><a class="header" href="#6-create-mdbook-workflow-mdbookyml">6. Create mdBook Workflow (<code>mdbook.yml</code>)</a></h5>
+<ul>
+<li><code>Repository --&gt; Actions --&gt; Pages --&gt; View All --&gt; mdBook --&gt; Configure</code></li>
+<li>The default deployment yelled at me, so I opted for a simpler, custom <code>mdbook.yml</code>.</li>
+<li>Example <code>mdbook.yml</code>:</li>
+</ul>
+<pre><code class="language-yml">name: Deploy mdBook Github Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: '0.4.21'
+          # mdbook-version: 'latest'
+
+      - run: mdbook build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+</code></pre>
+<h5 id="7-set-your-github-page-deployment-to-the-gh-pages-branch"><a class="header" href="#7-set-your-github-page-deployment-to-the-gh-pages-branch">7. Set your Github Page deployment to the 'gh-pages' branch.</a></h5>
+<ul>
+<li>The 'gh-pages' branch will be created by the <code>mdbook.yml</code> workflow (assuming no errors occur).</li>
+<li>Once it is created, you can set that branch as your deployment branch.</li>
+</ul>
+<p><img src="Primary%20Directory/../attachments/Setting_Page_Deployment.png" alt="Github Page Deployment" /></p>
+<h5 id="8-create-a-cname-record-to-point-your-custom-domain-to-the-github-pages-site"><a class="header" href="#8-create-a-cname-record-to-point-your-custom-domain-to-the-github-pages-site">8. Create a CNAME record to point your custom domain to the Github Pages site.</a></h5>
+<ul>
+<li>Documentation on configuring subdomains with Github Pages can be found <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain-and-the-www-subdomain-variant">here</a>.</li>
+<li>This step will vary for everyone, so below is my experience with Cloudflare.</li>
+</ul>
+<p><img src="Primary%20Directory/../attachments/Cloudflare_CNAME.png" alt="Cloudflare CNAME" /></p>
+<h5 id="9-add-your-target-domain-to-your-repository-settings"><a class="header" href="#9-add-your-target-domain-to-your-repository-settings">9. Add your target Domain to your Repository settings.</a></h5>
+<ul>
+<li><code>Repository --&gt; Settings --&gt; Pages --&gt; Custom Domain</code></li>
+<li>Once your CNAME finishes propegating, your mdBook should now be accessible.</li>
+</ul>
+<p><img src="Primary%20Directory/../attachments/Setting_Custom_Domain.png" alt="Custom Domain" /></p>
+<h5 id="10-flex-on-your-peers"><a class="header" href="#10-flex-on-your-peers">10. Flex on your peers.</a></h5>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="secondary-directory"><a class="header" href="#secondary-directory">Secondary Directory</a></h1>
 <ul>
 <li><a href="Secondary%20Directory/Obsidian_Markdown_Test.html">Obsidian Markdown Test</a></li>
