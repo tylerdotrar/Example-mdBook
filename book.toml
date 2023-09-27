@@ -1,0 +1,12 @@
+[book]
+authors = ["Tyler McCann (@tylerdotrar)"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Example Site"
+
+[build]
+build-dir = "public"
+
+[output.html]
+cname="test.hotbox.zip"
