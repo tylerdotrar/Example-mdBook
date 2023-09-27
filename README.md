@@ -1,15 +1,17 @@
 # Example-mdBook
 This is a simple repostory that was made to teach myself (and anyone else) how to easily create a **Github Pages mdBook Workflow** utilizing custom domains.
   
-- Live can be found here: https://example.hotbox.zip
+- **Live Site:** https://example.hotbox.zip
+
+
 
 ## Creating your Site:
-
+---
 > [!NOTE]
-> This example is a manual walkthrough of setting up the Github Pages mdBook Workflow WITHOUT having to setup/use ``mdbook`` locally on your own system.
+> This example is a manual walkthrough of setting up the Github Pages mdBook Workflow **WITHOUT** having to setup/use ``mdbook`` locally on your own system.
 > - Steps 2 through 4 are normally done automatically by running ``mdbook init``.
-> - Using custom domain names is NOT a requirement for setting up a successful Github Page, but I included it for completion and vebosity.
-
+> - Using a custom domain name is NOT a requirement for setting up a successful Github Page, but I included it in this repository for completion and vebosity.
+---
 
 #### 1. Create a repository that is set to ``Public``
 
