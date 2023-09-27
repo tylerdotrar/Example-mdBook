@@ -9,4 +9,4 @@ title = "Example Site"
 build-dir = "public"
 
 [output.html]
-cname="test.hotbox.zip"
+cname="example.hotbox.zip"
