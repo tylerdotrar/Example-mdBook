@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Tertiary Directory - Example Site</title>
+        <title>Obsidian Markdown Comparison - Example mdBook Site</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../SUMMARY.html"><strong aria-hidden="true">1.</strong> Table of Contents</a></li><li class="chapter-item expanded "><a href="../Primary Directory/index.html"><strong aria-hidden="true">2.</strong> Primary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Primary Directory/mdBook_GithubPages_Checklist.html"><strong aria-hidden="true">2.1.</strong> mdBook Github Pages Checklist</a></li></ol></li><li class="chapter-item expanded "><a href="../Secondary Directory/index.html"><strong aria-hidden="true">3.</strong> Secondary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Secondary Directory/Obsidian_Markdown_Test.html"><strong aria-hidden="true">3.1.</strong> Obsidian Markdown Test</a></li></ol></li><li class="chapter-item expanded "><a href="../Tertiary Directory/index.html" class="active"><strong aria-hidden="true">4.</strong> Tertiary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Tertiary Directory/Export-Obsidian.html"><strong aria-hidden="true">4.1.</strong> Export-Obsidian.ps1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Primary Section</li><li class="chapter-item expanded "><a href="../Primary Directory/mdBook_GithubPages_Creation.html"><strong aria-hidden="true">1.</strong> mdBook Github Page Creation</a></li><li class="chapter-item expanded affix "><li class="part-title">Secondary Section</li><li class="chapter-item expanded "><a href="../Secondary Directory/Obsidian_Markdown_Comparison.html" class="active"><strong aria-hidden="true">2.</strong> Obsidian Markdown Comparison</a></li><li class="chapter-item expanded affix "><li class="part-title">Tertiary Section</li><li class="chapter-item expanded "><a href="../Tertiary Directory/Export-Obsidian.html"><strong aria-hidden="true">3.</strong> Export-Obsidian.ps1</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -104,7 +104,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Example Site</h1>
+                    <h1 class="menu-title">Example mdBook Site</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -134,16 +134,150 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="tertiary-directory"><a class="header" href="#tertiary-directory">Tertiary Directory</a></h1>
+                        <h1 id="what-obsidian-features-work-in-mdbook"><a class="header" href="#what-obsidian-features-work-in-mdbook">What Obsidian Features Work in mdBook?</a></h1>
 <ul>
-<li><a href="Export-Obsidian.html">Export-Obsidian.ps1</a></li>
+<li>This is a simple file containing a handful of different Obsidian markdown features to have a visual comparison of how formatting carries over.
+<ul>
+<li>This is assuming no fancy pre-processors are being used; strictly default settings.</li>
 </ul>
+</li>
+</ul>
+<h3 id="tables"><a class="header" href="#tables">Tables</a></h3>
+<hr />
+<p><strong>mdBook Version:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Category 1</th><th>Category 2</th><th>Category 3</th></tr></thead><tbody>
+<tr><td>Example</td><td><code>Example</code></td><td>Longer example here.</td></tr>
+<tr><td>Example</td><td><code>Example</code></td><td>Longer example here.</td></tr>
+<tr><td>Example</td><td><code>Example</code></td><td>Longer example here.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Obsidian Version:</strong></p>
+<p><img src="../attachments/Obsidian_Tables.png" alt="Obsidian Tables" /></p>
+<h3 id="checklists"><a class="header" href="#checklists">Checklists</a></h3>
+<hr />
+<p><strong>mdBook Version:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Thingy 1</li>
+<li><input disabled="" type="checkbox"/>
+Thingy 2</li>
+<li><input disabled="" type="checkbox"/>
+Thingy 3</li>
+</ul>
+<p><strong>Obsidian Version:</strong></p>
+<p><img src="../attachments/Obsidian_Checklists.png" alt="Obsidian Checklists" /></p>
+<h3 id="message-blocks-callouts"><a class="header" href="#message-blocks-callouts">Message Blocks (Callouts)</a></h3>
+<hr />
+<p><strong>mdBook Version (Part 1):</strong></p>
+<blockquote>
+<p>[!info]
+Information here.
+Alises: N/A</p>
+</blockquote>
+<blockquote>
+<p>[!todo]
+To-do list here.
+Alises: N/A</p>
+</blockquote>
+<blockquote>
+<p>[!tip]
+Important info here!
+Aliases: <code>hint</code>, <code>important</code></p>
+</blockquote>
+<blockquote>
+<p>[!success]
+Success here!
+Aliases: <code>check</code>, <code>done</code></p>
+</blockquote>
+<blockquote>
+<p>[!question]
+Freqently asked questions!
+Aliases: <code>help</code>, <code>faq</code></p>
+</blockquote>
+<p><strong>Obsidian Version (Part 1):</strong></p>
+<p><img src="../attachments/Obsidian_Callouts_P1.png" alt="Obsidian Callouts" /></p>
+<p><strong>mdBook Version (Part 2):</strong></p>
+<blockquote>
+<p>[!warning]
+Warning here!
+Aliases: <code>caution</code>, <code>attention</code></p>
+</blockquote>
+<blockquote>
+<p>[!failure]
+Failure here!
+Aliases: <code>fail</code>, <code>missing</code></p>
+</blockquote>
+<blockquote>
+<p>[!danger]
+Bruh!!!
+Aliases: N/A</p>
+</blockquote>
+<blockquote>
+<p>[!bug]
+Known bugs here!
+Aliases: N/A</p>
+</blockquote>
+<blockquote>
+<p>[!example]
+Example here!
+Aliases: N/A</p>
+</blockquote>
+<blockquote>
+<p>[!quote]
+Quote here!
+Aliases: N/A</p>
+</blockquote>
+<p><strong>Obsidian Version (Part 2):</strong></p>
+<p><img src="../attachments/Obsidian_Callouts_P2.png" alt="Obsidian Callouts" /></p>
+<h3 id="mermaid-diagrams"><a class="header" href="#mermaid-diagrams">Mermaid Diagrams</a></h3>
+<hr />
+<p><strong>mdBook Version:</strong></p>
+<pre><code class="language-mermaid">graph TD;
+	A[Originator] --&gt; B[Route 1];
+	A --&gt; C[Route 2];
+	B --&gt; D[Finish];
+	C --&gt; D;
+</code></pre>
+<pre><code class="language-mermaid">flowchart LR
+
+A[Hard] --&gt;|Text| B(Round)
+B --&gt; C{Decision}
+C --&gt;|One| D[Result 1]
+C --&gt;|Two| E[Result 2]
+</code></pre>
+<pre><code class="language-mermaid">gantt
+    section Section
+    Completed :done,    des1, 2014-01-06,2014-01-08
+    Active        :active,  des2, 2014-01-07, 3d
+    Parallel 1   :         des3, after des1, 1d
+    Parallel 2   :         des4, after des1, 1d
+    Parallel 3   :         des5, after des3, 1d
+    Parallel 4   :         des6, after des4, 1d
+</code></pre>
+<pre><code class="language-mermaid">pie
+&quot;Dogs&quot; : 386
+&quot;Cats&quot; : 85.9
+&quot;Rats&quot; : 15
+</code></pre>
+<p><strong>Obsidian Version:</strong></p>
+<p><img src="../attachments/Obsidian_Diagrams.png" alt="Obsidian Diagrams" /></p>
+<h3 id="code-blocks"><a class="header" href="#code-blocks">Code Blocks</a></h3>
+<hr />
+<p><strong>mdBook Version:</strong></p>
+<pre><code class="language-powershell"># PowerShell Code Block
+Get-ChildItem &quot;C:\Windows\system32&quot;
+</code></pre>
+<pre><code class="language-shell">#!/bin/bash
+echo &quot;yo momma&quot;
+</code></pre>
+<p><strong>Obsidian Version:</strong></p>
+<p><img src="../attachments/Obsidian_Codeblocks.png" alt="Obsidian Codeblocks" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Secondary Directory/Obsidian_Markdown_Test.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../Primary Directory/mdBook_GithubPages_Creation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                             <a rel="next" href="../Tertiary Directory/Export-Obsidian.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
@@ -155,7 +289,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Secondary Directory/Obsidian_Markdown_Test.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../Primary Directory/mdBook_GithubPages_Creation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <a rel="next" href="../Tertiary Directory/Export-Obsidian.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">

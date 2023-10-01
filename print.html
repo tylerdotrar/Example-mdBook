@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Example Site</title>
+        <title>Example mdBook Site</title>
         <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="SUMMARY.html"><strong aria-hidden="true">1.</strong> Table of Contents</a></li><li class="chapter-item expanded "><a href="Primary Directory/index.html"><strong aria-hidden="true">2.</strong> Primary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Primary Directory/mdBook_GithubPages_Checklist.html"><strong aria-hidden="true">2.1.</strong> mdBook Github Pages Checklist</a></li></ol></li><li class="chapter-item expanded "><a href="Secondary Directory/index.html"><strong aria-hidden="true">3.</strong> Secondary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Secondary Directory/Obsidian_Markdown_Test.html"><strong aria-hidden="true">3.1.</strong> Obsidian Markdown Test</a></li></ol></li><li class="chapter-item expanded "><a href="Tertiary Directory/index.html"><strong aria-hidden="true">4.</strong> Tertiary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tertiary Directory/Export-Obsidian.html"><strong aria-hidden="true">4.1.</strong> Export-Obsidian.ps1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Primary Section</li><li class="chapter-item expanded "><a href="Primary Directory/mdBook_GithubPages_Creation.html"><strong aria-hidden="true">1.</strong> mdBook Github Page Creation</a></li><li class="chapter-item expanded affix "><li class="part-title">Secondary Section</li><li class="chapter-item expanded "><a href="Secondary Directory/Obsidian_Markdown_Comparison.html"><strong aria-hidden="true">2.</strong> Obsidian Markdown Comparison</a></li><li class="chapter-item expanded affix "><li class="part-title">Tertiary Section</li><li class="chapter-item expanded "><a href="Tertiary Directory/Export-Obsidian.html"><strong aria-hidden="true">3.</strong> Export-Obsidian.ps1</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -105,7 +105,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Example Site</h1>
+                    <h1 class="menu-title">Example mdBook Site</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -135,59 +135,58 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="example-mdbook"><a class="header" href="#example-mdbook">Example mdBook</a></h1>
+                        <h1 id="welcome-to-the-example-mdbook"><a class="header" href="#welcome-to-the-example-mdbook">Welcome to the Example mdBook!</a></h1>
 <ul>
-<li><a href="./SUMMARY.html">Table of Contents</a></li>
-<li><a href="Primary%20Directory/README.html">Primary Directory</a>
+<li>
+<p>This site is an example for how to configure a really simple mdBook Github Pages workflow (utilizing custom domain names).</p>
+</li>
+<li>
+<p>The following notes are a manual walkthrough of setting up the site <strong>WITHOUT</strong> using a local instance of <code>mdbook</code>.</p>
 <ul>
-<li><a href="Primary%20Directory/mdBook_GithubPages_Checklist.html">mdBook Github Pages Checklist</a></li>
+<li>Steps 2 through 4 are normally done automatically by running <code>mdbook init</code>.</li>
+<li>Using a custom domain name is <strong>NOT</strong> a requirement for setting up a successful Github Page, it is simply included in this repository for the sake of completion and verbosity.</li>
 </ul>
 </li>
-<li><a href="Secondary%20Directory/README.html">Secondary Directory</a>
-<ul>
-<li><a href="Secondary%20Directory/Obsidian_Markdown_Test.html">Obsidian Markdown Test</a></li>
-</ul>
-</li>
-<li><a href="Tertiary%20Directory/README.html">Tertiary Directory</a>
-<ul>
-<li><a href="Tertiary%20Directory/Export-Obsidian.html">Export-Obsidian.ps1</a></li>
-</ul>
+<li>
+<p>Link to the root Github repository <a href="https://github.com/tylerdotrar/Example-mdBook">here</a>.</p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="primary-directory"><a class="header" href="#primary-directory">Primary Directory</a></h1>
-<ul>
-<li><a href="Primary%20Directory/mdBook_GithubPages_Checklist.html">mdBook Github Pages Checklist</a></li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="welcome-to-the-example-mdbook"><a class="header" href="#welcome-to-the-example-mdbook">Welcome to the Example mdBook!</a></h1>
-<p>This site is a test for me to figure out how to get a simple mdBook Github Pages workflow running.</p>
 <p><img src="Primary%20Directory/../attachments/Pasted%20image%20123456789.png" alt="Pixel-Skeletor" /></p>
 <ul>
-<li><strong>Note:</strong> attachments should be URL encoded.</li>
+<li><strong>Note:</strong> attachments don't need to be completely URL encoded, however spaces do need to be replaced with <code>%20</code> within the file path.</li>
 </ul>
-<h3 id="creating-your-site"><a class="header" href="#creating-your-site">Creating your Site:</a></h3>
+<h2 id="creating-your-site"><a class="header" href="#creating-your-site">Creating your Site</a></h2>
 <hr />
-<h5 id="1-create-a-repository-that-is-set-to-public"><a class="header" href="#1-create-a-repository-that-is-set-to-public">1. Create a repository that is set to <code>Public</code></a></h5>
-<h5 id="2-create-a-src-directory"><a class="header" href="#2-create-a-src-directory">2. Create a <code>src</code> directory.</a></h5>
-<h5 id="3-place-all-markdown-files-aka-the-site-contents-into-the-src-directory"><a class="header" href="#3-place-all-markdown-files-aka-the-site-contents-into-the-src-directory">3. Place all Markdown files (aka the site contents) into the <code>src</code> directory.</a></h5>
+<h4 id="1-create-a-repository-that-is-set-to-public"><a class="header" href="#1-create-a-repository-that-is-set-to-public">1. Create a repository that is set to <code>Public</code></a></h4>
+<h4 id="2-create-a-src-directory"><a class="header" href="#2-create-a-src-directory">2. Create a &quot;<code>src</code>&quot; directory.</a></h4>
+<h4 id="3-place-all-markdown-files-aka-the-site-contents-into-the-src-directory"><a class="header" href="#3-place-all-markdown-files-aka-the-site-contents-into-the-src-directory">3. Place all Markdown files (aka the site contents) into the <code>src</code> directory.</a></h4>
 <ul>
-<li>The root <code>.md</code> file should be <code>SUMMARY.md</code>.</li>
+<li>The root <code>.md</code> file should be <code>SUMMARY.md</code>.
+<ul>
 <li>Formatting documentation can be found <a href="https://rust-lang.github.io/mdBook/format/summary.html">here</a>.</li>
+</ul>
+</li>
 <li>Example <code>SUMMARY.md</code>:</li>
 </ul>
-<pre><code class="language-markdown"># Example mdBook
+<pre><code class="language-markdown"># Summary
 
-- [Table of Contents](./SUMMARY.md)
-- [Primary Directory](Primary%20Directory/README.md)
-  - [mdBook Github Pages Checklist](Primary%20Directory/mdBook_GithubPages_Checklist.md)
-- [Secondary Directory](Secondary%20Directory/README.md)
-  - [Obsidian Markdown Test](Secondary%20Directory/Obsidian_Markdown_Test.md)
-- [Tertiary Directory](Tertiary%20Directory/README.md)
-  - [Export-Obsidian.ps1](Tertiary%20Directory/Export-Obsidian.md)
+# Primary Section
+- [mdBook Github Pages Checklist](Primary%20Directory/mdBook_GithubPages_Checklist.md)
+  
+# Secondary Section
+- [Obsidian Markdown Test](Secondary%20Directory/Obsidian_Markdown_Test.md)
+  
+# Tertiary Section
+- [Export-Obsidian.ps1](Tertiary%20Directory/Export-Obsidian.md)
 </code></pre>
-<h5 id="4-include-a-simple-booktoml"><a class="header" href="#4-include-a-simple-booktoml">4. Include a simple <code>book.toml</code></a></h5>
+<h4 id="4-include-a-simple-booktoml"><a class="header" href="#4-include-a-simple-booktoml">4. Include a simple <code>book.toml</code></a></h4>
 <ul>
 <li>Your custom domain name should be included.</li>
+<li>Simply remove the <code>[output.html]</code> section to avoid custom domain configuration.
+<ul>
 <li>If no domain name is specified, Github Pages will opt for: <code>https://&lt;username&gt;.github.io/&lt;repository&gt;</code></li>
+</ul>
+</li>
 <li>Example <code>book.toml</code>:</li>
 </ul>
 <pre><code class="language-toml">[book]
@@ -195,7 +194,7 @@ authors = [&quot;Tyler McCann (@tylerdotrar)&quot;]
 language = &quot;en&quot;
 multilingual = false
 src = &quot;src&quot;
-title = &quot;Example mdBook&quot;
+title = &quot;Example mdBook Site&quot;
 
 [build]
 build-dir = &quot;public&quot;
@@ -203,15 +202,19 @@ build-dir = &quot;public&quot;
 [output.html]
 cname=&quot;example.hotbox.zip&quot;
 </code></pre>
-<h5 id="5-enable-read--write-permissions-for-workflows-using-the-github_token"><a class="header" href="#5-enable-read--write-permissions-for-workflows-using-the-github_token">5. Enable 'Read &amp; Write Permissions' for Workflows using the GITHUB_TOKEN.</a></h5>
+<h4 id="5-enable-read--write-permissions-for-workflows-using-the-github_token"><a class="header" href="#5-enable-read--write-permissions-for-workflows-using-the-github_token">5. Enable 'Read &amp; Write Permissions' for Workflows using the GITHUB_TOKEN.</a></h4>
 <ul>
 <li><code>Repository --&gt; Settings --&gt; Actions --&gt; General --&gt; Workflow Permissions</code></li>
 </ul>
 <p><img src="Primary%20Directory/../attachments/Setting_Workflow_Perms.png" alt="Allow GITHUB_TOKEN" /></p>
-<h5 id="6-create-mdbook-workflow-mdbookyml"><a class="header" href="#6-create-mdbook-workflow-mdbookyml">6. Create mdBook Workflow (<code>mdbook.yml</code>)</a></h5>
+<h4 id="6-create-mdbook-workflow-mdbookyml"><a class="header" href="#6-create-mdbook-workflow-mdbookyml">6. Create mdBook Workflow (<code>mdbook.yml</code>)</a></h4>
 <ul>
 <li><code>Repository --&gt; Actions --&gt; Pages --&gt; View All --&gt; mdBook --&gt; Configure</code></li>
-<li>The default deployment yelled at me, so I opted for a simpler, custom <code>mdbook.yml</code>.</li>
+<li>The default deployment yelled at me, so I opted for a simpler, custom <code>mdbook.yml</code>.
+<ul>
+<li>You should be able to copy and paste this example file verbatim.</li>
+</ul>
+</li>
 <li>Example <code>mdbook.yml</code>:</li>
 </ul>
 <pre><code class="language-yml">name: Deploy mdBook Github Pages
@@ -245,40 +248,47 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
 </code></pre>
-<h5 id="7-set-your-github-page-deployment-to-the-gh-pages-branch"><a class="header" href="#7-set-your-github-page-deployment-to-the-gh-pages-branch">7. Set your Github Page deployment to the 'gh-pages' branch.</a></h5>
+<h4 id="7-set-your-github-page-deployment-to-the-gh-pages-branch"><a class="header" href="#7-set-your-github-page-deployment-to-the-gh-pages-branch">7. Set your Github Page deployment to the 'gh-pages' branch.</a></h4>
 <ul>
 <li>The 'gh-pages' branch will be created by the <code>mdbook.yml</code> workflow (assuming no errors occur).</li>
 <li>Once it is created, you can set that branch as your deployment branch.</li>
 </ul>
 <p><img src="Primary%20Directory/../attachments/Setting_Page_Deployment.png" alt="Github Page Deployment" /></p>
-<h5 id="8-create-a-cname-record-to-point-your-custom-domain-to-the-github-pages-site"><a class="header" href="#8-create-a-cname-record-to-point-your-custom-domain-to-the-github-pages-site">8. Create a CNAME record to point your custom domain to the Github Pages site.</a></h5>
+<h4 id="8-create-a-cname-record-to-point-your-custom-domain-to-the-github-pages-site"><a class="header" href="#8-create-a-cname-record-to-point-your-custom-domain-to-the-github-pages-site">8. Create a CNAME record to point your custom domain to the Github Pages site.</a></h4>
 <ul>
 <li>Documentation on configuring subdomains with Github Pages can be found <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain-and-the-www-subdomain-variant">here</a>.</li>
 <li>This step will vary for everyone, so below is my experience with Cloudflare.</li>
 </ul>
 <p><img src="Primary%20Directory/../attachments/Cloudflare_CNAME.png" alt="Cloudflare CNAME" /></p>
-<h5 id="9-add-your-target-domain-to-your-repository-settings"><a class="header" href="#9-add-your-target-domain-to-your-repository-settings">9. Add your target Domain to your Repository settings.</a></h5>
+<h4 id="9-add-your-target-domain-to-your-repository-settings"><a class="header" href="#9-add-your-target-domain-to-your-repository-settings">9. Add your target Domain to your Repository settings.</a></h4>
 <ul>
 <li><code>Repository --&gt; Settings --&gt; Pages --&gt; Custom Domain</code></li>
 <li>Once your CNAME finishes propegating, your mdBook should now be accessible.</li>
 </ul>
 <p><img src="Primary%20Directory/../attachments/Setting_Custom_Domain.png" alt="Custom Domain" /></p>
-<h5 id="10-flex-on-your-peers"><a class="header" href="#10-flex-on-your-peers">10. Flex on your peers.</a></h5>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="secondary-directory"><a class="header" href="#secondary-directory">Secondary Directory</a></h1>
-<ul>
-<li><a href="Secondary%20Directory/Obsidian_Markdown_Test.html">Obsidian Markdown Test</a></li>
-</ul>
+<h4 id="10-flex-on-your-peers"><a class="header" href="#10-flex-on-your-peers">10. Flex on your peers.</a></h4>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="what-obsidian-features-work-in-mdbook"><a class="header" href="#what-obsidian-features-work-in-mdbook">What Obsidian Features Work in mdBook?</a></h1>
+<ul>
+<li>This is a simple file containing a handful of different Obsidian markdown features to have a visual comparison of how formatting carries over.
+<ul>
+<li>This is assuming no fancy pre-processors are being used; strictly default settings.</li>
+</ul>
+</li>
+</ul>
 <h3 id="tables"><a class="header" href="#tables">Tables</a></h3>
 <hr />
+<p><strong>mdBook Version:</strong></p>
 <div class="table-wrapper"><table><thead><tr><th>Category 1</th><th>Category 2</th><th>Category 3</th></tr></thead><tbody>
 <tr><td>Example</td><td><code>Example</code></td><td>Longer example here.</td></tr>
 <tr><td>Example</td><td><code>Example</code></td><td>Longer example here.</td></tr>
 <tr><td>Example</td><td><code>Example</code></td><td>Longer example here.</td></tr>
 </tbody></table>
 </div>
+<p><strong>Obsidian Version:</strong></p>
+<p><img src="Secondary%20Directory/../attachments/Obsidian_Tables.png" alt="Obsidian Tables" /></p>
 <h3 id="checklists"><a class="header" href="#checklists">Checklists</a></h3>
 <hr />
+<p><strong>mdBook Version:</strong></p>
 <ul>
 <li><input disabled="" type="checkbox"/>
 Thingy 1</li>
@@ -287,8 +297,11 @@ Thingy 2</li>
 <li><input disabled="" type="checkbox"/>
 Thingy 3</li>
 </ul>
+<p><strong>Obsidian Version:</strong></p>
+<p><img src="Secondary%20Directory/../attachments/Obsidian_Checklists.png" alt="Obsidian Checklists" /></p>
 <h3 id="message-blocks-callouts"><a class="header" href="#message-blocks-callouts">Message Blocks (Callouts)</a></h3>
 <hr />
+<p><strong>mdBook Version (Part 1):</strong></p>
 <blockquote>
 <p>[!info]
 Information here.
@@ -314,6 +327,9 @@ Aliases: <code>check</code>, <code>done</code></p>
 Freqently asked questions!
 Aliases: <code>help</code>, <code>faq</code></p>
 </blockquote>
+<p><strong>Obsidian Version (Part 1):</strong></p>
+<p><img src="Secondary%20Directory/../attachments/Obsidian_Callouts_P1.png" alt="Obsidian Callouts" /></p>
+<p><strong>mdBook Version (Part 2):</strong></p>
 <blockquote>
 <p>[!warning]
 Warning here!
@@ -344,18 +360,11 @@ Aliases: N/A</p>
 Quote here!
 Aliases: N/A</p>
 </blockquote>
-<p><strong>Example:</strong></p>
-<blockquote>
-<p>[!question]- Guess what?</p>
-<blockquote>
-<p>[!example] Callouts can be renamed...</p>
-<blockquote>
-<p>[!tip] ... and nested!</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<p><strong>Obsidian Version (Part 2):</strong></p>
+<p><img src="Secondary%20Directory/../attachments/Obsidian_Callouts_P2.png" alt="Obsidian Callouts" /></p>
 <h3 id="mermaid-diagrams"><a class="header" href="#mermaid-diagrams">Mermaid Diagrams</a></h3>
 <hr />
+<p><strong>mdBook Version:</strong></p>
 <pre><code class="language-mermaid">graph TD;
 	A[Originator] --&gt; B[Route 1];
 	A --&gt; C[Route 2];
@@ -383,16 +392,28 @@ C --&gt;|Two| E[Result 2]
 &quot;Cats&quot; : 85.9
 &quot;Rats&quot; : 15
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="tertiary-directory"><a class="header" href="#tertiary-directory">Tertiary Directory</a></h1>
-<ul>
-<li><a href="Tertiary%20Directory/Export-Obsidian.html">Export-Obsidian.ps1</a></li>
-</ul>
+<p><strong>Obsidian Version:</strong></p>
+<p><img src="Secondary%20Directory/../attachments/Obsidian_Diagrams.png" alt="Obsidian Diagrams" /></p>
+<h3 id="code-blocks"><a class="header" href="#code-blocks">Code Blocks</a></h3>
+<hr />
+<p><strong>mdBook Version:</strong></p>
+<pre><code class="language-powershell"># PowerShell Code Block
+Get-ChildItem &quot;C:\Windows\system32&quot;
+</code></pre>
+<pre><code class="language-shell">#!/bin/bash
+echo &quot;yo momma&quot;
+</code></pre>
+<p><strong>Obsidian Version:</strong></p>
+<p><img src="Secondary%20Directory/../attachments/Obsidian_Codeblocks.png" alt="Obsidian Codeblocks" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="export-obsidianps1-v112"><a class="header" href="#export-obsidianps1-v112">Export-Obsidian.ps1 (v1.1.2)</a></h1>
 <ul>
-<li>This is an old, unpublished script I made for exporting specific Obsidian notes
-and correlated attachments.</li>
-<li>I'll likely make a new, refined one for the <code>Obsidian-to-mdBook</code> workflow.</li>
-<li>This is mostly to see how code block formatting looks on a test site.</li>
+<li>This is an old, unpublished PowerShell script I made for exporting specific Obsidian notes
+and correlated attachments.
+<ul>
+<li>I'll likely make a new, refined one for the <code>Obsidian-to-mdBook</code> workflow, as well as automated <code>SUMMARY.md</code> file generation.</li>
+</ul>
+</li>
+<li>This page is mostly to see how code block formatting looks on a test site.</li>
 </ul>
 <pre><code class="language-powershell">function Export-Obsidian {
 #.SYNOPSIS
@@ -433,8 +454,8 @@ and correlated attachments.</li>
 
     Param(
         [string]$Target,
-        [string]$AttachmentDir = 'V:\Obsidian\attachments',
-        [string]$OutputDir = 'V:\Obsidian\OffSec\+Reports\Exports',
+        [string]$AttachmentDir, # = &quot;&lt;hardcoded_attachment_directory&gt;&quot;,
+        [string]$OutputDir, # = &quot;&lt;hardcoded_output_directory&gt;&quot;,
         [switch]$UrlEncoded,
         [switch]$Help
     )

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Primary Directory - Example Site</title>
+        <title>mdBook Github Page Creation - Example mdBook Site</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../SUMMARY.html"><strong aria-hidden="true">1.</strong> Table of Contents</a></li><li class="chapter-item expanded "><a href="../Primary Directory/index.html" class="active"><strong aria-hidden="true">2.</strong> Primary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Primary Directory/mdBook_GithubPages_Checklist.html"><strong aria-hidden="true">2.1.</strong> mdBook Github Pages Checklist</a></li></ol></li><li class="chapter-item expanded "><a href="../Secondary Directory/index.html"><strong aria-hidden="true">3.</strong> Secondary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Secondary Directory/Obsidian_Markdown_Test.html"><strong aria-hidden="true">3.1.</strong> Obsidian Markdown Test</a></li></ol></li><li class="chapter-item expanded "><a href="../Tertiary Directory/index.html"><strong aria-hidden="true">4.</strong> Tertiary Directory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Tertiary Directory/Export-Obsidian.html"><strong aria-hidden="true">4.1.</strong> Export-Obsidian.ps1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Primary Section</li><li class="chapter-item expanded "><a href="../Primary Directory/mdBook_GithubPages_Creation.html" class="active"><strong aria-hidden="true">1.</strong> mdBook Github Page Creation</a></li><li class="chapter-item expanded affix "><li class="part-title">Secondary Section</li><li class="chapter-item expanded "><a href="../Secondary Directory/Obsidian_Markdown_Comparison.html"><strong aria-hidden="true">2.</strong> Obsidian Markdown Comparison</a></li><li class="chapter-item expanded affix "><li class="part-title">Tertiary Section</li><li class="chapter-item expanded "><a href="../Tertiary Directory/Export-Obsidian.html"><strong aria-hidden="true">3.</strong> Export-Obsidian.ps1</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -104,7 +104,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Example Site</h1>
+                    <h1 class="menu-title">Example mdBook Site</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -134,19 +134,144 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="primary-directory"><a class="header" href="#primary-directory">Primary Directory</a></h1>
+                        <h1 id="welcome-to-the-example-mdbook"><a class="header" href="#welcome-to-the-example-mdbook">Welcome to the Example mdBook!</a></h1>
 <ul>
-<li><a href="mdBook_GithubPages_Checklist.html">mdBook Github Pages Checklist</a></li>
+<li>
+<p>This site is an example for how to configure a really simple mdBook Github Pages workflow (utilizing custom domain names).</p>
+</li>
+<li>
+<p>The following notes are a manual walkthrough of setting up the site <strong>WITHOUT</strong> using a local instance of <code>mdbook</code>.</p>
+<ul>
+<li>Steps 2 through 4 are normally done automatically by running <code>mdbook init</code>.</li>
+<li>Using a custom domain name is <strong>NOT</strong> a requirement for setting up a successful Github Page, it is simply included in this repository for the sake of completion and verbosity.</li>
 </ul>
+</li>
+<li>
+<p>Link to the root Github repository <a href="https://github.com/tylerdotrar/Example-mdBook">here</a>.</p>
+</li>
+</ul>
+<p><img src="../attachments/Pasted%20image%20123456789.png" alt="Pixel-Skeletor" /></p>
+<ul>
+<li><strong>Note:</strong> attachments don't need to be completely URL encoded, however spaces do need to be replaced with <code>%20</code> within the file path.</li>
+</ul>
+<h2 id="creating-your-site"><a class="header" href="#creating-your-site">Creating your Site</a></h2>
+<hr />
+<h4 id="1-create-a-repository-that-is-set-to-public"><a class="header" href="#1-create-a-repository-that-is-set-to-public">1. Create a repository that is set to <code>Public</code></a></h4>
+<h4 id="2-create-a-src-directory"><a class="header" href="#2-create-a-src-directory">2. Create a &quot;<code>src</code>&quot; directory.</a></h4>
+<h4 id="3-place-all-markdown-files-aka-the-site-contents-into-the-src-directory"><a class="header" href="#3-place-all-markdown-files-aka-the-site-contents-into-the-src-directory">3. Place all Markdown files (aka the site contents) into the <code>src</code> directory.</a></h4>
+<ul>
+<li>The root <code>.md</code> file should be <code>SUMMARY.md</code>.
+<ul>
+<li>Formatting documentation can be found <a href="https://rust-lang.github.io/mdBook/format/summary.html">here</a>.</li>
+</ul>
+</li>
+<li>Example <code>SUMMARY.md</code>:</li>
+</ul>
+<pre><code class="language-markdown"># Summary
+
+# Primary Section
+- [mdBook Github Pages Checklist](Primary%20Directory/mdBook_GithubPages_Checklist.md)
+  
+# Secondary Section
+- [Obsidian Markdown Test](Secondary%20Directory/Obsidian_Markdown_Test.md)
+  
+# Tertiary Section
+- [Export-Obsidian.ps1](Tertiary%20Directory/Export-Obsidian.md)
+</code></pre>
+<h4 id="4-include-a-simple-booktoml"><a class="header" href="#4-include-a-simple-booktoml">4. Include a simple <code>book.toml</code></a></h4>
+<ul>
+<li>Your custom domain name should be included.</li>
+<li>Simply remove the <code>[output.html]</code> section to avoid custom domain configuration.
+<ul>
+<li>If no domain name is specified, Github Pages will opt for: <code>https://&lt;username&gt;.github.io/&lt;repository&gt;</code></li>
+</ul>
+</li>
+<li>Example <code>book.toml</code>:</li>
+</ul>
+<pre><code class="language-toml">[book]
+authors = [&quot;Tyler McCann (@tylerdotrar)&quot;]
+language = &quot;en&quot;
+multilingual = false
+src = &quot;src&quot;
+title = &quot;Example mdBook Site&quot;
+
+[build]
+build-dir = &quot;public&quot;
+
+[output.html]
+cname=&quot;example.hotbox.zip&quot;
+</code></pre>
+<h4 id="5-enable-read--write-permissions-for-workflows-using-the-github_token"><a class="header" href="#5-enable-read--write-permissions-for-workflows-using-the-github_token">5. Enable 'Read &amp; Write Permissions' for Workflows using the GITHUB_TOKEN.</a></h4>
+<ul>
+<li><code>Repository --&gt; Settings --&gt; Actions --&gt; General --&gt; Workflow Permissions</code></li>
+</ul>
+<p><img src="../attachments/Setting_Workflow_Perms.png" alt="Allow GITHUB_TOKEN" /></p>
+<h4 id="6-create-mdbook-workflow-mdbookyml"><a class="header" href="#6-create-mdbook-workflow-mdbookyml">6. Create mdBook Workflow (<code>mdbook.yml</code>)</a></h4>
+<ul>
+<li><code>Repository --&gt; Actions --&gt; Pages --&gt; View All --&gt; mdBook --&gt; Configure</code></li>
+<li>The default deployment yelled at me, so I opted for a simpler, custom <code>mdbook.yml</code>.
+<ul>
+<li>You should be able to copy and paste this example file verbatim.</li>
+</ul>
+</li>
+<li>Example <code>mdbook.yml</code>:</li>
+</ul>
+<pre><code class="language-yml">name: Deploy mdBook Github Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: '0.4.21'
+          # mdbook-version: 'latest'
+
+      - run: mdbook build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+</code></pre>
+<h4 id="7-set-your-github-page-deployment-to-the-gh-pages-branch"><a class="header" href="#7-set-your-github-page-deployment-to-the-gh-pages-branch">7. Set your Github Page deployment to the 'gh-pages' branch.</a></h4>
+<ul>
+<li>The 'gh-pages' branch will be created by the <code>mdbook.yml</code> workflow (assuming no errors occur).</li>
+<li>Once it is created, you can set that branch as your deployment branch.</li>
+</ul>
+<p><img src="../attachments/Setting_Page_Deployment.png" alt="Github Page Deployment" /></p>
+<h4 id="8-create-a-cname-record-to-point-your-custom-domain-to-the-github-pages-site"><a class="header" href="#8-create-a-cname-record-to-point-your-custom-domain-to-the-github-pages-site">8. Create a CNAME record to point your custom domain to the Github Pages site.</a></h4>
+<ul>
+<li>Documentation on configuring subdomains with Github Pages can be found <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain-and-the-www-subdomain-variant">here</a>.</li>
+<li>This step will vary for everyone, so below is my experience with Cloudflare.</li>
+</ul>
+<p><img src="../attachments/Cloudflare_CNAME.png" alt="Cloudflare CNAME" /></p>
+<h4 id="9-add-your-target-domain-to-your-repository-settings"><a class="header" href="#9-add-your-target-domain-to-your-repository-settings">9. Add your target Domain to your Repository settings.</a></h4>
+<ul>
+<li><code>Repository --&gt; Settings --&gt; Pages --&gt; Custom Domain</code></li>
+<li>Once your CNAME finishes propegating, your mdBook should now be accessible.</li>
+</ul>
+<p><img src="../attachments/Setting_Custom_Domain.png" alt="Custom Domain" /></p>
+<h4 id="10-flex-on-your-peers"><a class="header" href="#10-flex-on-your-peers">10. Flex on your peers.</a></h4>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../SUMMARY.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="../Primary Directory/mdBook_GithubPages_Checklist.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../Secondary Directory/Obsidian_Markdown_Comparison.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -155,10 +280,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../SUMMARY.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="../Primary Directory/mdBook_GithubPages_Checklist.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../Secondary Directory/Obsidian_Markdown_Comparison.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
