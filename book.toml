@@ -3,7 +3,7 @@ authors = ["Tyler McCann (@tylerdotrar)"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Example Site"
+title = "Example mdBook Site"
 
 [build]
 build-dir = "public"

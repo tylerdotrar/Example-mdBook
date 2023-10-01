@@ -1,8 +1,8 @@
 # Export-Obsidian.ps1 (v1.1.2)
-- This is an old, unpublished script I made for exporting specific Obsidian notes
+- This is an old, unpublished PowerShell script I made for exporting specific Obsidian notes
 and correlated attachments.
-- I'll likely make a new, refined one for the ``Obsidian-to-mdBook`` workflow.
-- This is mostly to see how code block formatting looks on a test site.
+	- I'll likely make a new, refined one for the ``Obsidian-to-mdBook`` workflow, as well as automated ``SUMMARY.md`` file generation.
+- This page is mostly to see how code block formatting looks on a test site.
 
 ```powershell
 function Export-Obsidian {
@@ -44,8 +44,8 @@ function Export-Obsidian {
 
     Param(
         [string]$Target,
-        [string]$AttachmentDir = 'V:\Obsidian\attachments',
-        [string]$OutputDir = 'V:\Obsidian\OffSec\+Reports\Exports',
+        [string]$AttachmentDir, # = "<hardcoded_attachment_directory>",
+        [string]$OutputDir, # = "<hardcoded_output_directory>",
         [switch]$UrlEncoded,
         [switch]$Help
     )

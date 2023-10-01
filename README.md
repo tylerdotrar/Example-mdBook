@@ -1,5 +1,5 @@
 # Example-mdBook
-This is a simple repostory that was made to teach myself (and anyone else) how to easily create a **Github Pages mdBook Workflow** utilizing custom domains.
+This is a simple repostory that was made to teach myself (and anyone else) how to easily create a **mdBook Github Page Workflow** utilizing custom domains.
   
 - **Live Site:** https://example.hotbox.zip
 
@@ -10,7 +10,9 @@ This is a simple repostory that was made to teach myself (and anyone else) how t
 > [!NOTE]
 > This example is a manual walkthrough of setting up the Github Pages mdBook Workflow **WITHOUT** having to setup/use ``mdbook`` locally on your own system.
 > - Steps 2 through 4 are normally done automatically by running ``mdbook init``.
-> - Using a custom domain name is NOT a requirement for setting up a successful Github Page, but I included it in this repository for completion and vebosity.
+> - Using a custom domain name is NOT a requirement for setting up a successful Github Page, but I included it in this repository for the sake of completion and vebosity. To skip custom domain configuration:
+>    - Remove the ``[output.html]`` section from ``book.toml`` in step 4.
+>    - Skip steps 8 and 9 entirely.
 ---
 
 #### 1. Create a repository that is set to ``Public``
@@ -21,25 +23,27 @@ This is a simple repostory that was made to teach myself (and anyone else) how t
 
 #### 3. Place all Markdown files (aka the site contents) into the ``src`` directory.
 - The root ``.md`` file should be ``SUMMARY.md``.
-- Formatting documentation can be found [here](https://rust-lang.github.io/mdBook/format/summary.html).
+  - Formatting documentation can be found [here](https://rust-lang.github.io/mdBook/format/summary.html).
 - Example ``SUMMARY.md``:
 
 ```markdown
-# Example mdBook
+# Summary
 
-- [Table of Contents](./SUMMARY.md)
-- [Primary Directory](Primary%20Directory/README.md)
-  - [mdBook Github Pages Checklist](Primary%20Directory/mdBook_GithubPages_Checklist.md)
-- [Secondary Directory](Secondary%20Directory/README.md)
-  - [Obsidian Markdown Test](Secondary%20Directory/Obsidian_Markdown_Test.md)
-- [Tertiary Directory](Tertiary%20Directory/README.md)
-  - [Export-Obsidian.ps1](Tertiary%20Directory/Export-Obsidian.md)
+# Primary Section
+- [mdBook Github Pages Checklist](Primary%20Directory/mdBook_GithubPages_Checklist.md)
+  
+# Secondary Section
+- [Obsidian Markdown Test](Secondary%20Directory/Obsidian_Markdown_Test.md)
+  
+# Tertiary Section
+- [Export-Obsidian.ps1](Tertiary%20Directory/Export-Obsidian.md)
 ```
 
 
 #### 4. Include a simple ``book.toml``
 - Your custom domain name should be included.
-- If no domain name is specified, Github Pages will opt for: ``https://<username>.github.io/<repository>``
+- Simply remove the ``[output.html]`` section to avoid custom domain configuration.
+  - If no domain name is specified, Github Pages will opt for: ``https://<username>.github.io/<repository>``
 - Example ``book.toml``:
 
 ```toml
@@ -48,7 +52,7 @@ authors = ["Tyler McCann (@tylerdotrar)"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Example mdBook"
+title = "Example mdBook Site"
 
 [build]
 build-dir = "public"
@@ -67,6 +71,7 @@ cname="example.hotbox.zip"
 #### 6. Create mdBook Workflow (``mdbook.yml``)
 - ``Repository --> Actions --> Pages --> View All --> mdBook --> Configure``
 - The default deployment yelled at me, so I opted for a simpler, custom ``mdbook.yml``.
+  - You should be able to copy and paste this example file verbatim.
 - Example ``mdbook.yml``:
 
 ```yml

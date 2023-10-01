@@ -1,7 +1,10 @@
 # What Obsidian Features Work in mdBook?
+- This is a simple file containing a handful of different Obsidian markdown features to have a visual comparison of how formatting carries over.
+	- This is assuming no fancy pre-processors are being used; strictly default settings.
 
 ### Tables
 ---
+**mdBook Version:**
 
 | Category 1 | Category 2 | Category 3 |
 | --- | --- | --- |
@@ -10,15 +13,26 @@
 | Example | ``Example`` | Longer example here. | 
 
 
+**Obsidian Version:**
+
+![Obsidian Tables](../attachments/Obsidian_Tables.png)
+
 ### Checklists
 ---
+**mdBook Version:**
+
 - [ ] Thingy 1
 - [ ] Thingy 2
 - [ ] Thingy 3
 
+**Obsidian Version:**
+
+![Obsidian Checklists](../attachments/Obsidian_Checklists.png)
+
 
 ### Message Blocks (Callouts)
 ---
+**mdBook Version (Part 1):**
 
 > [!info]
 > Information here.
@@ -39,6 +53,12 @@
 > [!question]
 > Freqently asked questions!
 > Aliases: ``help``, ``faq``
+
+**Obsidian Version (Part 1):**
+
+![Obsidian Callouts](../attachments/Obsidian_Callouts_P1.png)
+
+**mdBook Version (Part 2):**
 
 >[!warning]
 > Warning here!
@@ -64,15 +84,14 @@
 > Quote here!
 > Aliases: N/A
 
-**Example:**
 
-> [!question]- Guess what?
-> > [!example] Callouts can be renamed...
-> > > [!tip] ... and nested!
+**Obsidian Version (Part 2):**
 
+![Obsidian Callouts](../attachments/Obsidian_Callouts_P2.png)
 
 ### Mermaid Diagrams
 ---
+**mdBook Version:**
 
 ```mermaid
 graph TD;
@@ -110,3 +129,24 @@ pie
 "Rats" : 15
 ```
 
+**Obsidian Version:**
+
+![Obsidian Diagrams](../attachments/Obsidian_Diagrams.png)
+
+### Code Blocks
+---
+**mdBook Version:**
+
+```powershell
+# PowerShell Code Block
+Get-ChildItem "C:\Windows\system32"
+```
+
+```shell
+#!/bin/bash
+echo "yo momma"
+```
+
+**Obsidian Version:**
+
+![Obsidian Codeblocks](../attachments/Obsidian_Codeblocks.png)
