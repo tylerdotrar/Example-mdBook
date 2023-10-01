@@ -30,11 +30,11 @@
 # Summary
 
 # Primary Section
-- [mdBook Github Pages Checklist](Primary%20Directory/mdBook_GithubPages_Checklist.md)
-  
+- [mdBook Github Page Creation](Primary%20Directory/mdBook_GithubPages_Creation.md)
+
 # Secondary Section
-- [Obsidian Markdown Test](Secondary%20Directory/Obsidian_Markdown_Test.md)
-  
+- [Obsidian Markdown Comparison](Secondary%20Directory/Obsidian_Markdown_Comparison.md)
+
 # Tertiary Section
 - [Export-Obsidian.ps1](Tertiary%20Directory/Export-Obsidian.md)
 ```
